@@ -1,0 +1,138 @@
+/* ============ Base & Palette ============ */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+
+:root{
+  /* Brand palette (from purple logo) */
+  --brand-primary: #6A0DAD;      /* royal purple */
+  --brand-accent:  #CBA0FF;      /* lavender highlight */
+  --brand-mint:    #F3E8FF;      /* navbar lavender */
+  --brand-ink:     #4B3069;      /* deep purple text */
+  --brand-cream:   #FFFDF5;      /* warm page bg */
+  --brand-forest:  #2D143C;      /* dark plum band bg (KPI/CTA) */
+
+  /* Neutrals */
+  --border-soft:   #f0eada;
+  --muted:         #7a6b82; /* adjusted muted to match purple */
+}
+
+
+
+body { background-color: var(--brand-cream); color: var(--brand-ink); }
+
+/* Headings */
+h1, h2, h4, h5, .footer h6 { color: var(--brand-primary); }
+
+/* ============ Navbar ============ */
+.custom-navbar{
+  background-color: var(--brand-mint) !important;
+  border-bottom: 4px solid var(--brand-ink);
+}
+.custom-navbar .nav-link{
+  color: var(--brand-primary) !important;
+  transition: color .3s ease, border-color .3s ease;
+  border-bottom: 3px solid transparent;
+}
+.custom-navbar .nav-link:hover{
+  color: var(--brand-accent) !important;
+  border-bottom-color: var(--brand-accent);
+}
+.custom-navbar .nav-link.active{
+  color: var(--brand-accent) !important;
+  font-weight: 700;
+  border-bottom-color: var(--brand-accent);
+}
+
+/* ============ Cards ============ */
+.card-custom-bg{ background-color: var(--brand-cream) !important; border-color: var(--border-soft); }
+.card-custom-bg .card-title{ color: var(--brand-primary) !important; }
+.card-custom-bg .card-text{ color: var(--brand-ink); text-align: justify; }
+.card-img-fixed{ height: 100%; object-fit: cover; }
+
+/* ============ Section Header ============ */
+.section-header{ font-family: 'Georgia', serif; }
+.section-header-brand{
+  font-weight: bold; font-style: italic; letter-spacing: .5px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,.08);
+  font-family: 'Georgia', serif;
+}
+
+/* ============ Icon Rings (Contact) ============ */
+.icon-circle{
+  width: 48px; height: 48px; border: 2px dotted var(--brand-accent);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+}
+
+/* ============ Footer ============ */
+.footer{ border-top: 4px solid var(--brand-ink); }
+/* .footer p{ color: var(--brand-primary) !important; } */
+.footer-link{
+  color: var(--brand-primary) !important; padding: .25rem 0; text-decoration: none;
+  transition: color .3s ease;
+}
+.footer-link:hover{ color: var(--brand-accent); }
+.footer-link.active{
+  font-weight: 700; color: var(--brand-accent) !important;
+  border-left: 3px solid var(--brand-accent); padding-left: .5rem;
+}
+.footer a img:hover{ transform: scale(1.1); transition: transform .2s ease; }
+
+.contact-info { 
+  color: #494848 !important;
+  padding: .25rem 0;
+  text-decoration: none; 
+}
+
+/* ============ Themed Sections ============ */
+.section-highlight-green{
+  background-color: #e6f4ea; /* keep a very light panel bg */
+  border-top: 4px solid var(--brand-mint);
+  border-bottom: 4px solid var(--brand-mint);
+  padding: 20px 0;
+}
+
+/* KPI / dark bands (Home) */
+.band-forest{ background: var(--brand-forest); color: #fff; }
+
+/* Buttons that match brand */
+.btn-brand{ background: var(--brand-primary); border: none; color:#fff; }
+.btn-brand:hover{ filter: brightness(0.9); }
+.btn-outline-brand{ border-color: var(--brand-primary); color: var(--brand-primary); }
+.btn-outline-brand:hover{ background: var(--brand-primary); color: #fff; }
+
+/* Soft card shadows & rounded edges */
+.rounded-4{ border-radius: 1rem; }
+.shadow-sm{ box-shadow: 0 .4rem 1rem rgba(0,0,0,.08) !important; }
+
+/* Utility text colors */
+.text-ink{ color: var(--brand-ink) !important; }
+.text-muted-ink{ color: var(--muted) !important; }
+
+
+/* Outline button in brand purple */
+.btn-outline-brand {
+  border: 2px solid var(--brand-primary) !important;
+  color: var(--brand-primary) !important;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-brand:hover {
+  background-color: var(--brand-primary) !important;
+  color: #fff !important;
+}
+
+/* Make the entire right column sticky on desktop so accordion isn't hidden */
+@media (min-width: 992px) {
+  .sidebar-sticky {
+    position: sticky;
+    top: 24px;          /* adjust if you have a fixed navbar; e.g., 88px */
+  }
+}
+
+/* On mobile/tablet, disable sticky so layout feels natural */
+@media (max-width: 991.98px) {
+  .sidebar-sticky {
+    position: static;
+  }
+}
+
